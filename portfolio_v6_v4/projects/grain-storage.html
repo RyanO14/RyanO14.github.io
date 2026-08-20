@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaporative Cooling Grain Storage System | Ryan O'Connell</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="logo">R. O'CONNELL</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#projects">Back to Projects</a></li>
+  </ul>
+</nav>
+
+<section class="project-detail">
+  <h2 class="section-heading">Evaporative Cooling Grain Storage System</h2>
+
+  <div class="project-preview-frame">
+    <img src="../assets/projects/grain_proj/grain-storage.jpg" alt="Evaporative Cooling Grain Storage System preview" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+  </div>
+
+  <div class="project-detail-inner">
+    <p><strong>The Challenge:</strong> A rural town facing recurring food waste challenges lacked the energy infrastructure needed for reliable grain storage. As a major exporter of grain-based products, it was losing up to 50&ndash;60% of its grain during storage because of poorly engineered systems, a major hit to both food supply and the local economy.</p>
+    <p><strong>Our Approach:</strong> I co-developed an evaporative cooling-based grain storage system as a finalist in the McMaster UN SDG Chemical Engineering Competition, targeting 50&ndash;60% post-harvest loss reduction and estimated $40,000/yr operating savings. The design was intentionally low-cost and energy-efficient, powered entirely by water and solar energy so it did not depend on a large electrical supply. Warm air is drawn through small pipes encased in damp clay; as the water in the clay evaporates, it pulls heat from the air into the clay and pipe walls. The resulting cooled air is then routed into the grain storage unit, keeping temperatures low enough to significantly slow spoilage and extend shelf life.</p>
+    <p><strong>Reflection:</strong> The proposal was reviewed by industry professionals, professors and PhD candidates and finished top 5 out of 20+ teams. Beyond the recognition, the project was a rewarding blend of innovation and teamwork, giving me the chance to apply engineering knowledge to a real, high-impact problem. It was my first experience "thinking like an engineer", and it is a mindset I plan to carry into my future work.</p>
+  </div>
+
+  <div class="project-skills">
+    <h3 class="subsection-heading">Skills Used</h3>
+    <div class="skills-tags"><span class="skill-tag">Heat Transfer</span><span class="skill-tag">Cost Analysis</span><span class="skill-tag">Systems Design</span><span class="skill-tag">Sustainability</span></div>
+  </div>
+
+  <div class="project-report">
+    <h3 class="subsection-heading">Project Report</h3>
+    <p class="media-hint">Read the full project report here.</p>
+    <div class="report-card">
+      <div class="report-actions">
+        <a href="../assets/projects/grain_proj/grainstorage_report.pdf#page=1" class="report-link" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      </div>
+      <div class="report-viewer">
+        <object id="report-object" class="report-iframe" data="../assets/projects/grain_proj/grainstorage_report.pdf#page=1" type="application/pdf" title="Grain storage project report">
+          <p class="report-fallback">Your browser does not support inline PDF previews. <a href="../assets/projects/grain_proj/grainstorage_report.pdf#page=1" target="_blank" rel="noopener noreferrer">Open the report in a new tab</a>.</p>
+        </object>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>&copy; 2026 Ryan O'Connell.</p></footer>
+</section>
+
+<script>
+  const reportPdfUrl = '../assets/projects/grain_proj/grainstorage_report.pdf';
+  const startingPage = 1;
+  const reportLink = document.querySelector('.report-link');
+  const reportObject = document.getElementById('report-object');
+  const pageUrl = `${reportPdfUrl}#page=${startingPage}`;
+
+  reportLink.href = pageUrl;
+  if (reportObject) {
+    reportObject.data = pageUrl;
+  }
+</script>
+</body>
+</html>

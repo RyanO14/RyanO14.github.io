@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistive Remote-Control Car | Ryan O'Connell</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="logo">R. O'CONNELL</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#projects">Back to Projects</a></li>
+  </ul>
+</nav>
+
+<section class="project-detail">
+  <h2 class="section-heading">Assistive Remote-Control Car</h2>
+
+  <div class="project-preview-frame">
+    <img src="../assets/projects/car_proj/car-vid.mp4" alt="Assistive Remote-Control Car preview" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+  </div>
+
+  <div class="project-detail-inner">
+    <p>Many standing-assist devices are bulky, expensive, or require a caregiver, limiting users' independence. Our team developed a mobile, Raspberry Pi-controlled assistive platform that helps individuals transition from kneeling to standing with greater autonomy.</p>
+    <p>The system features a rack-and-pinion scissor lift that raises users to standing height. A DC motor drives the rear wheels while a servo-actuated rack-and-pinion assembly handles steering; laser-cut wheels with elastic grip bands and a lightweight basswood frame round out the build.</p>
+    <p><strong>Design Highlights:</strong></p>
+    <ul>
+      <li>Scissor lift chosen specifically for higher load capacity over simpler alternatives</li>
+      <li>Iterative build-test-integrate process, validating components individually before full-system testing</li>
+      <li>Detailed documentation to track progress and avoid repeated mistakes</li>
+    </ul>
+  </div>
+
+  <div class="project-skills">
+    <h3 class="subsection-heading">Skills Used</h3>
+    <div class="skills-tags"><span class="skill-tag">Python</span><span class="skill-tag">Raspberry Pi</span><span class="skill-tag">Autodesk Inventor</span><span class="skill-tag">PWM Control</span><span class="skill-tag">Tkinter</span></div>
+  </div>
+
+  <div class="project-media">
+    <h3 class="subsection-heading">Media</h3>
+    <p class="media-hint">See the elevated platform, as well as a closer view of the front and back wheels.</p>
+    <div class="media-grid">
+      <div class="media-slot">
+        <img src="../assets/projects/car_proj/car-proj1.png" alt="RC car project overview" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+      </div>
+      <div class="media-slot">
+        <img src="../assets/projects/car_proj/car-proj2.png" alt="RC car project overview" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+      </div>
+      <div class="media-slot">
+        <img src="../assets/projects/car_proj/car-proj3.png" alt="RC car system render" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+      </div>
+    </div>
+  </div>
+
+  <footer><p>&copy; 2026 Ryan O'Connell.</p></footer>
+</section>
+
+<div class="media-expander" id="media-expander" aria-hidden="true">
+  <div class="media-expanded-panel" role="dialog" aria-modal="true" aria-label="Expanded media view">
+    <div class="media-expanded-toolbar">
+      <button class="media-minimize" type="button" aria-label="Minimize media">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <img class="media-expanded-image" id="media-expanded-image" src="" alt="Expanded project media">
+  </div>
+</div>
+
+<script src="../script.js"></script>
+<script>
+  const expander = document.getElementById('media-expander');
+  const expandedImage = document.getElementById('media-expanded-image');
+  const minimizeButton = document.querySelector('.media-minimize');
+
+  document.querySelectorAll('.media-slot img').forEach((img) => {
+    img.classList.add('media-thumb');
+    img.addEventListener('click', () => {
+      const src = img.dataset.full || img.src;
+      expandedImage.src = src;
+      expandedImage.alt = img.alt;
+      expander.classList.add('open');
+      expander.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  function closeExpander() {
+    expander.classList.remove('open');
+    expander.setAttribute('aria-hidden', 'true');
+  }
+
+  minimizeButton.addEventListener('click', closeExpander);
+  expander.addEventListener('click', (event) => {
+    if (event.target === expander) closeExpander();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && expander.classList.contains('open')) {
+      closeExpander();
+    }
+  });
+</script>
+
+</body>
+</html>

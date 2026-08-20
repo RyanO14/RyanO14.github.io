@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discrete Sequential Logic Display System | Ryan O'Connell</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="logo">R. O'CONNELL</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#projects">Back to Projects</a></li>
+  </ul>
+</nav>
+
+<section class="project-detail">
+  <h2 class="section-heading">Discrete Sequential Logic Display System</h2>
+
+  <div class="project-preview-frame">
+    <img src="../assets/projects/circuit_proj/circuit_main.mp4" alt="Discrete Sequential Logic Display System preview" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+  </div>
+
+  <div class="project-detail-inner">
+    <p>Designed and debugged a sequential logic display system using JK flip-flops, control logic, and combinational gating to drive a seven-segment output. Before building the circuit physically, I mapped the design in NI Multisim so I could test the logic, validate the state transitions, and catch errors early. This helped me plan the system more confidently and reduce the risk of mistakes during construction.</p>
+    <p>What made the project especially challenging was the debugging process. I often had to stop and determine whether a fault was caused by a miswired connection or by a wire that had simply not been plugged in properly. The experience required patience and careful troubleshooting, and it reinforced how important it was to test each wire before using it to ensure it was not broken or faulty. By combining methodical planning with systematic verification, I was able to refine the design into a reliable working circuit.</p>
+  </div>
+
+  <div class="project-skills">
+    <h3 class="subsection-heading">Skills Used</h3>
+    <div class="skills-tags"><span class="skill-tag">NI Multisim</span><span class="skill-tag">Digital Logic</span><span class="skill-tag">Karnaugh Maps</span><span class="skill-tag">Circuit Debugging</span></div>
+  </div>
+
+  <div class="project-media">
+    <h3 class="subsection-heading">Media</h3>
+    <p class="media-hint">See the circuit logic and the final display system in context.</p>
+    <div class="media-grid media-grid--stacked">
+      <div class="media-slot">
+        <img src="../assets/projects/circuit_proj/circuit-proj1.jpg" alt="Sequential logic circuit overview" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+      </div>
+      <div class="media-slot">
+        <img src="../assets/projects/circuit_proj/circuit-proj2.png" alt="Sequential logic circuit detail" onerror="this.style.display='none'; this.parentElement.classList.add('empty')">
+      </div>
+    </div>
+
+    <div class="report-card report-slot-card report-slot-card--full">
+      <div class="report-actions">
+        <a href="../assets/projects/circuit_proj/circuit-report.pdf#page=1" class="report-link" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      </div>
+      <object id="report-object" class="report-iframe report-slot-iframe" data="../assets/projects/circuit_proj/circuit-report.pdf#page=1" type="application/pdf" title="Sequential logic project report">
+        <p class="report-fallback">Your browser does not support inline PDF previews. <a href="../assets/projects/circuit_proj/circuit-report.pdf#page=1" target="_blank" rel="noopener noreferrer">Open the report in a new tab</a>.</p>
+      </object>
+    </div>
+  </div>
+
+  <footer><p>&copy; 2026 Ryan O'Connell.</p></footer>
+</section>
+
+<div class="media-expander" id="media-expander" aria-hidden="true">
+  <div class="media-expanded-panel" role="dialog" aria-modal="true" aria-label="Expanded media view">
+    <div class="media-expanded-toolbar">
+      <button class="media-minimize" type="button" aria-label="Minimize media">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <img class="media-expanded-image" id="media-expanded-image" src="" alt="Expanded project media">
+  </div>
+</div>
+
+<script>
+  const expander = document.getElementById('media-expander');
+  const expandedImage = document.getElementById('media-expanded-image');
+  const minimizeButton = document.querySelector('.media-minimize');
+
+  document.querySelectorAll('.media-slot img').forEach((img) => {
+    img.classList.add('media-thumb');
+    img.addEventListener('click', () => {
+      const src = img.dataset.full || img.src;
+      expandedImage.src = src;
+      expandedImage.alt = img.alt;
+      expander.classList.add('open');
+      expander.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  function closeExpander() {
+    expander.classList.remove('open');
+    expander.setAttribute('aria-hidden', 'true');
+  }
+
+  minimizeButton.addEventListener('click', closeExpander);
+  expander.addEventListener('click', (event) => {
+    if (event.target === expander) closeExpander();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && expander.classList.contains('open')) {
+      closeExpander();
+    }
+  });
+</script>
+
+</body>
+</html>
