@@ -14,12 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('a');
       card.href = p.link;
       card.className = 'project-card';
+      
+      // I am restoring the EXACT HTML structure from your original script.js
+      // so your CSS applies perfectly, but I am adding the hover logic below.
       card.innerHTML = `
         <h3>${p.title}</h3>
         <p>${p.description}</p>
-        <span class="learn-more">Learn more &rarr;</span>
+        <span>Learn more →</span>
       `;
       grid.appendChild(card);
+      
+      // --- PRELOAD ON HOVER LOGIC ---
+      // When hovering over the card, check if the project has an image/media to preload
+      card.addEventListener('mouseenter', () => {
+        if (p.image && !card.dataset.preloaded) {
+          const img = new Image();
+          img.src = p.image;
+          card.dataset.preloaded = "true";
+        }
+      });
     });
   }
 
@@ -27,15 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.timeline-item').forEach(item => {
     const dot = item.querySelector('.timeline-dot');
     const box = item.querySelector('.timeline-detail-box');
+    
     if (!dot || !box) return;
-
+    
     const toggle = () => {
       const isOpen = item.classList.contains('active');
       document.querySelectorAll('.timeline-item.active').forEach(el => el.classList.remove('active'));
       if (!isOpen) item.classList.add('active');
       updateTimelineSnapState();
     };
-
+    
     dot.addEventListener('click', (e) => {
       e.preventDefault();
       toggle();
