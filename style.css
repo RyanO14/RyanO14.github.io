@@ -627,7 +627,7 @@ footer { text-align: center; padding: 20px 0; color: #8a7f68; font-size: 0.85rem
   object-fit: contain;
 }
 .project-preview-frame.empty::after {
-  content: "Add a preview image here\A(assets/projects/filename.jpg)";
+  content: "Preview Loading\A(assets/projects/filename.jpg)";
   white-space: pre;
   color: #8a7f68;
   font-size: 0.85rem;

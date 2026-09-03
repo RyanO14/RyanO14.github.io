@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.href = p.link;
       card.className = 'project-card';
       
-      // I am restoring the EXACT HTML structure from your original script.js
-      // so your CSS applies perfectly, but I am adding the hover logic below.
       card.innerHTML = `
         <h3>${p.title}</h3>
         <p>${p.description}</p>
